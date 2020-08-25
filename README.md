@@ -9,17 +9,25 @@ The program is written to support the following browsers:
   + Firefox
   + Safari
  
-But as long as a browser is supported by selenium it is supported by this program. Fell free to open an issue for browsers you'd like to be added to the program. For the program to run you will need to tell it what browser you want to use. For that you will have to run the program via the command-line. The command should look something like this: `py messenger.py browser`(Windows), `python messenger.py browser`or `python3 messenger.py`(MacOS and Linux) and replace 'browser' with one of the following:
+But as long as a browser is supported by selenium it is supported by this program. Fell free to open an issue for browsers you'd like to be added to the program. For the program to run you will need to write some information that selenium needs into the config.cfg file. First the program needs the path to the webdriver of your browser. Look at the selenium documentation for further information. Also you need the program to tell what browser you're using. We gonna do that by adding one of the following to the config file:
  + chrome
  + firefox
  + safari
  
-For the program to run you will also have to set up a file that's called .env in the same directory as the program. The contents of the file should look like this:
+We seperate the path and the browser we are using by a asterix. Our config.cfg file should look something like this if you're using chome:
 ```
-{PATH:"Path/to/webdriver.exe"}
+Path/to/webdriver.exe*chrome
 ```
-For selenium to run you will have to download the right webdriver for the browser you're using. Then you will have to write the path to the webdriver executable into the .env file. For further details have a look at the selenium documentation.
 ***
+## How to use it
+At the moment we can only send messages with this program but I want and will and more functionality to this. Again feel free to open an issue and request a new function for the program. If you are using the script make sure to import it like this `import messenger`. This will ensure that the whole script will run on import and the driver opens the WhatsAppWeb website. Once the website is loaded you will have to scan the QR-Code on the screen with your phone **through WhatsApp**. After the normal WhatsAppWeb site will open.
+
+### Sending messages
+`send_message(chat, message)`
+  + *chat*: Here you pass a string that equals the name of the chat you want to send a message in
+  + *message*: Here you pass a string that contains the message that is going to be sent
+  
+  
 
 
 
